@@ -10,6 +10,7 @@ from shot import Shot
 def main():
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    background_image = pygame.image.load('images/asteroids-bg.png')
     clock = pygame.time.Clock()
 
     updatable = pygame.sprite.Group()
@@ -47,7 +48,7 @@ def main():
                     shot.kill()
 
         screen.fill("black")
-
+        screen.blit( background_image, ( 0,0 ) )
         for obj in drawable:
             obj.draw(screen)
 
